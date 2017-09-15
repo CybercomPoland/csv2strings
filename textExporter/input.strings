@@ -1,0 +1,247 @@
+//only comment here just "comment"
+"common.button.ok" = "Ok"; //text for ok button
+"common.button.gotIt" = "Rozumiem"; //text for understand button
+"common.button.retry" = "Spróbuj ponownie"; //text for understand button
+"common.button.cancel" = "Anuluj"; //text for cancel button
+"common.button.done" = "Gotowe"; //text for done button
+"common.button.close" = "Zamknij"; //text for close button
+"common.button.yes" = "Tak"; //Text for confirm (yes) button
+"common.alertTitle.noInternetTitle" = "Błąd połączenia"; //title for alert related to internet connection error
+"common.alertMessage.noInternetMessage" = "Czy masz nadal połączenie z internetem?"; //message for alert related to internet connection error
+"common.alertTitle.confirmation" = "Potwierdzenie"; //title for confirmation alert
+
+//RegistrationEmail
+"registrationEmail.navigationBar.title" = "REJESTRACJA"; //text for title of registration screen step_1
+"registrationEmail.label.info" = "Zarejestruj się w JemyJemy, aby korzystać benefitu żywieniowego od Twojej firmy."; //text for label with description of screen purpose
+"registrationEmail.textField.email" = "Twój mail firmowy"; // text for email text field placeholder
+"registrationEmail.button.register" = "ZAREJESTRUJ"; // text for register button
+"registrationEmail.alertTitle.noCompany" = "Brak firmy na liście"; // text for alert view title presented when user's company isn't involved to bonus system
+"registrationEmail.alertMessage.noCompany" = "Wygląda na to, że Twoja firma nie jest zapisana na naszej liście. Upewnij się czy podany przez Ciebie mail firmowy jest poprawnie wpisany lub zgłoś swoją firmę do naszego programu."; // text for alert view message presented when user's company isn't involved to bonus system
+"registrationEmail.alertButton.report" = "Zgłoś firmę"; //text for alert view button that allows report a new company
+"registrationEmail.alertButton.checkData" = "Sprawdź dane"; //text for alert view button that allows check inserted data
+"registrationEmail.alertTitle.alreadyRegistered" = "Chyba już się znamy!"; // text for alert view title presented when user tries to register second time with the same email
+"registrationEmail.alertMessage.alreadyRegistered" = "Podany adres e-mail jest już zarejestrowany w systemie. Przejdź do strony głównej, aby się zalogować"; //text for alert view message presented when user tries to register second time with the same email
+
+
+//RegistrationPassword
+"registrationPassword.navigationBar.title" = "REJESTRACJA"; //text for title of registration screen step_2
+"registrationPassword.label.info" = "Wprowadź swoje dane, aby dokończyć rejestrację."; // text for label with description of screen purpose
+"registrationPassword.textField.name" = "Imię"; // text for name text field placeholder
+"registrationPassword.textField.lastName" = "Nazwisko"; // text for last name text field placeholder
+"registrationPassword.textField.password" = "Hasło"; // text for password text field placeholder
+"registrationPassword.textField.repeatPassword" = "Powtórz hasło"; // text for repeat password text field placeholder
+"registrationPassword.textField.phoneNumber" = "Telefon (opcjonalnie)"; // text for phone number text field placeholder
+"registrationPassword.label.terms" = "Rejestrując się wyrażasz zgodę na"; // text for terms information part_1 (label)
+"registrationPassword.button.terms" = "warunki uczestnictwa z usługi"; // text for terms information part_2 (button)
+"registrationPassword.button.register" = "ZAREJESTRUJ"; //text for register buttonw
+"registrationPassword.alertTitle.complete" = "Rejestracja przebiegła pomyślnie!"; // text for alert view title presented after completing registration process
+"registrationPassword.alertMessage.complete" = "Wysłaliśmy do Ciebie maila z linkiem aktywacyjnym"; //text for alert view message presented after completing registration process
+"registration.label.footer" = "Administratorem danych osobowych jest Sodexo Benefits and Rewards Services Polska sp. z o. o. z siedzibą w Warszawie, ul. Kłobucka 25. Dane osobowe będą przetwarzane w celu korzystania z Platformy JemyJemy, w tym mogą być udostępniane Restauracjom. Podanie danych jest dobrowolne, ale konieczne do rejestracji na Platfornie JemyJemy. Osobie, której dane dotyczą, przysługuje prawo dostępu do treści danych i prawo poprawiania danych osobowych."; //text for footer terms on the bottom of registration screen
+
+//ReportCompany
+"reportCompany.navigationBar.title" = "ZGŁOŚ FIRMĘ"; //title for report company screen
+"reportCompany.label.info" = "Sprawdź czy podany przez Ciebie adres e-mail jest prawidłowy. Podając dodatkowo maila do HR ułatwisz nam kontakt z Twoją firmą."; //description of register company screen screen purpose
+"reportCompany.label.helpInfo" = "Chcesz pomóc przyspieszyć proces?"; //label asking user if wanto to improve process
+"reportCompany.textField.helpEmail" = "Podaj e-mail do Twojego HR (opcjonalnie)"; //placeholder for text field asking for HR e-mail
+"reportCompany.button.report" = "ZGŁOŚ SWOJĄ FIRMĘ"; //button text for register your company button
+"reportCompany.alertTitle.reported" = "Dziękujemy za zgłoszenie firmy!"; //title of alert view presented after reporting new company
+"reportCompany.alertMessage.reported" = "Skontaktujemy się z Twoimi działami HR najszybciej jak to będzie możliwe. Zrobimy wszystko co w naszej mocy, żeby JemyJemy w krótce było dla Ciebie dostępne."; //message of alert view presented after reporting new company
+
+//Login
+"login.navigationBar.title" = "LOGOWANIE"; //title for Login screen
+"login.textField.email" = "Twój e-mail firmowy"; //email text field placeholder
+"login.textField.password" = "Hasło"; //password text field placeholder
+"login.button.logIn" = "ZALOGUJ"; //text for log in button
+"login.button.forgotPassword" = "Nie pamiętam hasła"; //text for forgot password button
+"login.label.noAccount" = "Nie masz jeszcze konta?"; //label asking user if they are not registered yet
+"login.label.register" = "Zarejestruj się"; //text for register button
+"login.alertTitle.logInFailed" = "Logowanie nie powiodło się"; //text for alert view title presented after user failed to log in
+"login.alertMessage.logInFailed" = "Sprawdź czy e-mail i hasło są poprawnie wpisane lub przejdź do rejestracji, jeśli jeszcze nie masz u nas konta."; //text for alert view message presented after user failed to log in
+"login.alertButton.register" = "Rejestracja"; //text for register alert view button
+
+//ResetPassword
+"resetPassword.navigationBar.title" = "RESET HASŁA"; //title for ResetPassword screen
+"resetPassword.textField.email" = "Twój e-mail firmowy"; //email text field placeholder
+"resetPassword.button.reset" = "RESET HASŁA"; //text for reset password button
+"resetPassword.alertMessage.passwordSent" = "Na podany adres e-mail wysłaliśmy link, który pozoli Ci zresetować i ustawić nowe hasło."; //text for alert view message presented after successful requesting password reset
+"resetPassword.alertMessage.userNotFound" = "Nie znaleziono maila w bazie"; //text for alert view message presented when wrong address was used
+
+//CompanyLocation
+"companyLocation.navigationBar.title" = "ADRES DOSTAWY"; //title for CompanyLocation screen
+"companyLocation.navigationBar.buttonSave" = "Zapisz"; //text for save bar button item
+"companyLocation.label.noCompany" = "Nie widzisz siedziby swojej firmy?"; // text for label asking if user can't find his office address
+"companyLocation.button.contact" = "Skontaktuj się z nami!"; //text for contact with us button clicked if user cant find his office address
+"companyLocation.alertMessage.noLocations" = "Nie udało się pobrać listy lokacji, spróbuj ponownie później"; //text for alert view message presented when wrong address was used
+
+//SideMenu
+"sideMenu.label.activateAccount" = "Aktywuj swoje konto"; //text for side menu label asking user to activate his account
+"sideMenu.button.resend" = "Wyślij ponownie mail z linkiem aktywacyjnym"; //text for resend activation mail button.
+//"sideMenu.item.chooseLocation" = "Wybierz adres"; //text for choose location menu item
+"sideMenu.item.support" = "Wsparcie"; //text for support side menu item
+"sideMenu.item.terms" = "Regulamin"; //text for terms of use side menu item
+"sideMenu.item.account" = "Konto"; //text for user account side menu item
+"sideMenu.item.orders" = "Zamówienia"; //text for user orders side menu item
+"sideMenu.item.logout" = "Wyloguj"; //text for log out side menu item
+"sideMenu.alertMessage.logout" = "Czy na pewno chcesz się wylogować?"; //text for log out confirmation alert sheet
+"sideMenu.alertButton.logout" = "Wyloguj"; //text for logout alert button
+"sideMenu.label.codeInfo" = "Twój kod identyfikacyjny"; //text for your identification code label
+"sideMenu.alertMessage.linkSent" = "Link aktywacyjny został ponownie wysłany. Sprawdź maila."; // text for alert message informing about resending activation link
+
+//Menu
+"menu.headerMainInfo.canOrder" = "Zamówienia na %@ %@ przyjmujemy do godz. %@ rano."; //text for info about dedline order time; first %@ is placeholder for weekday, second for date and third for dedline hour. This  text will look like this: "Zamówienia na poniedziałek 14.09 przyjmujemy do godz. 10:00 rano."
+"menu.headerAdditionalInfo.canOrder" = "Wiemy, że nie lubisz ograniczeń, ale jest to jeden z czynników wpływających na nasze świetne ceny :)"; //text for header additional info explaining that deadline is crucial for good prices
+"menu.headerShortInfo.canOrder" = "Menu: %@ %@. Zamówienia do %@ rano"; // text for info about menu date and order deadline; first %@ is placeholder for weekday, second for date and third for deadline hour. This text will look like this; "Menu: poniedziałek 16.06. Zamówienia do 10:00 rano."
+"menu.alertTitle.activateAccount" = "Aktywuj konto"; //text for alert view askin user to activate account
+"menu.alertMessage.activateAccount" = "Funkcjonalność aplikacji jest teraz ograniczona. Aktywuj konto przez link, który Ci wysłaliśmy aby móc robić zakupy."; // text for message asking user to activate account
+"menu.alertMessage.orderLimit" = "Można zamówić tylko jedno danie dziennie"; //text for alert view informing about order limitation
+
+//DishDetails
+"dishDetails.navigationBar.title" = "SZCZEGÓŁY"; //title for dish details screen
+"dishDetails.label.orderInfo" = "CENA ZAMÓWIENIA WYLICZONA SPECJALNIE DLA CIEBIE"; //text for label informing about user price details
+"dishDetails.label.standardPriceInfo" = "Cena podstawowa:"; //text for standar price label
+"dishDetails.label.discountInfo" = "Zniżka od Twojej firmy:"; //text informing about discount
+"dishDetails.label.deliveryInfo" = "Dostawa:"; //text for delivery label
+"dishDetails.label.totalPriceInfo" = "Suma:"; //text for total price label
+"dishDetails.label.delivery" = "DOSTAWA"; //text for delivery section title
+"dishDetails.label.deliveryTimeInfo" = "Dostawa w godzinach:"; //text for delivery time label
+"dishDetails.label.addressInfo" = "Adres:"; //text for delivery address label
+"dishDetails.button.orderAndPay" = "ZAMAWIAM I PŁACĘ"; //text for order and pay button via web
+"dishDetails.button.oneClickPayment" = "ZAMAWIAM I PŁACĘ: %@"; //text for pay with one click button
+"dishDetails.alertMessage.toLate" = "Niestety minęła %@ i już nie przyjmujemy zamówień na dzisiaj."; // text for alert that there is to late to make order today
+"dishDetails.alertMessage.unknownProblem" = "Wystąpił problem w połączeniu, prosimy spróbuj ponownie"; // text for unknown problem while making order
+"dishDetails.button.lowerThePrice" = "OBNIŻ CENĘ"; //text for discount button
+"dishDetails.textField.discountCodePlaceholder" = "Kod promocyjny"; //placeholder for textfield with discount code
+"dishDetails.label.discountCodeDoesNotExist" = "Podany kod nie istnieje"; //error message for non-existent code
+"dishDetails.label.discountCodeCannotBeUsed" = "Podany kod nie może być użyty"; //error message for code that can't be used at this moment
+"dishDetails.label.discountCodeRedeemed" = "Kod zrealizowano pomyślnie"; //confirmation message for successfully redeemed code
+"dishDetails.button.moreDetails" = "WIĘCEJ INFORMACJI"; // text for button that reveals more info about given dish
+"dishDetails.segmentedOption.aboutDish" = "O daniu"; // text for "About dish" segment in segmented control in 'more info' section
+"dishDetails.segmentedOption.aboutRestaurant" = "O restauracji"; // text for "About restaurant" segment in segmented control in 'more info' section
+"dishDetails.label.weightAndCaloriesInfo" = "Gramatura i wartość kaloryczna:"; // text for weight and calories info label in 'about dish' segment
+"dishDetails.label.additionalInfo" = "Dodatkowe informacje:"; // text for additional info label in 'about dish' segment
+"dishDetails.label.ingredientsInfo" = "Składniki:"; //text for ingredients info label in 'about dish' segment
+"dishDetails.label.weightInfo%@" = "%@ gr"; //text for weight info label in 'about dish' segment e.g. 500 gr
+"dishDetails.label.kcalInfo%@" = "%@ kcal"; //text for calories info label in 'about dish' segment e.g. 760 kcal
+"dishDetails.label.spicy" = "danie ostre"; //text for label in 'about dish' segment saying that dish is spicy
+"dishDetails.label.noGluten" = "bez glutenu"; //text for label in 'about dish' segment saying that dish contains no gluten
+"dishDetails.label.containsPeanuts" = "zawiera orzechy"; //text for label in 'about dish' segment saying that dish contains peanuts
+"dishDetails.label.noLactose" = "bez laktozy"; //text for label in 'about dish' segment saying that dish contains no lactose
+
+//ECard
+"ecard.navigationBar.buttonCancel" = "Anuluj"; //text for cancel bar button item of ecard module
+"ecard.navigationBar.buttonDone" = "Gotowe"; //text for done bar button item of ecard module
+
+//OrderConfirmation
+"orderConfirmation.navigationBar.title" = "POTWIERDZENIE"; //title for order confirmation screen
+"orderConfirmation.navigationBar.exitButton" = "Wyjdź"; //text for exit button bar item
+"orderConfirmation.label.thankYouInfo" = "Dziękujemy za złożenia zamówienia!"; //text for thank you for makin order label
+"orderConfirmation.label.yourCodeInfo" = "Twój kod identyfikacyjny:"; //text for your identyfication code label
+"orderConfirmation.label.orderStatusInfo" = "Status zamówienia:"; //text for order status label
+"orderConfirmation.label.statusPending" = "W TRAKCIE REALIZACJI"; //text for order pending status
+"orderConfirmation.label.statusAccepted" = "ZAMÓWIENIE PRZYJĘTE"; //text for order accepted status
+"orderConfirmation.label.statusRejected" = "ODRZUCONE"; //text for order not accepted status
+"orderConfirmation.label.statusCanceled" = "ANULOWANE"; //text for order canceled status
+"orderConfirmation.label.statusDescriptionCancelledInfo" = "Zamówienie zostało anulowane - prawdopodobnie stało się to na innym urządzeniu."; //text for cancelled order status description
+"orderConfirmation.label.statusDescriptionPendingInfo" = "Czekamy aż eCard przetworzy Twoją płatność. Status zostanie zaktualizowany natychmiast, gdy płatność zostanie zatwierdzona"; //text for payment pending status description
+"orderConfirmation.label.statusDescriptionRejectedInfo" = "Transakcja odrzucona z powodu niewłaściwej autoryzacji lub braków środków. Płatność nie została wykonana."; //text for payment rejected status description
+"orderConfirmation.label.%@fromRestaurant%@willArrive" = "%@ od restauracji %@ dotrze na Twój lunch."; //text for payment accepted status description containing info about restaurant and dish ordered
+"orderConfirmation.label.deliveryHourInfo" = "Godzina dostawy:"; //text for delivery hour label info
+
+//Terms
+"terms.navigatinBar.title" = "WARUNKI"; //title for terms and conditions screen
+
+//Welcome
+"welcome.label.splash" = "Masz ochotę\nna dobry lunch\nw biurze?"; //greeting text on first screen after splash screen
+"welcome.label.hello" = "Cześć!";
+"welcome.label.info_1" = "Masz ochotę na smaczny lunch do biura? Dzięki współpracy Twojej firmy z JemyJemy możesz to mieć!"; //info text 1
+"welcome.label.info_2" = "Codziennie oferujemy osiem dań z wybranych restauracji w wyjątkowo dobrych cenach."; //info text 2
+"welcome.label.info_3" = "Płacisz tylko za posiłek. Dostawę do biura zapewniamy za darmo."; //info text 3
+"welcome.button.register" = "REJESTRACJA"; //text for register button
+"welcome.label.alreadyRegistered" = "Masz już konto?"; //text asking if user has account
+"welcome.button.logIn" = "Zaloguj się!"; //text for log in button
+
+//Support
+"support.navigationBar.title" = "WSPARCIE"; //title for support screen
+"support.label.info" = "Jeżeli masz pytania, na Twojej drodze pojawił się jakiś problem lub chcesz się z nami podzielić swoją opinią napisz lub zadzwoń:"; //text for label describing purpose of screen
+"support.label.write" = "Napisz:"; //text for label informing about section Write
+"support.textField.categoryPlaceholder" = "W jakiej sprawie się z nami kontaktujesz?"; //placeholder text for text field with category reason
+"support.textField.subcategoryPlaceholder" = "Wybierz podkategorię"; //placeholder for text field with subcategory reason
+"support.textView.writeMessagePlaceholder" = "Napisz wiadomość"; // placeholder for text view with user complain
+"support.button.report" = "Zgłoś"; //text for report button
+"support.alertTitle.reported" = "Dziękujemy!"; //text for alert title presented after reporting complain
+"support.alertMessage.reported" = "Twoje zgłoszenie zostało przyjęte. Skontaktujemy się z Tobą jak szybko to tylko będzie możliwe."; //text for alert message presented after reporting complain
+"support.label.supportMessageCount%@/%@" = "%@/%@ znaków"; //text for label above support message indicating how many chars user is allowed to enter
+"support.alertTitle.messageTooLong" = "Wiadomość zbyt długa"; //title for alert displayed when message is too long
+"support.alertMessage.messageTooLong" = "Wiadomość którą próbowałeś wysłać jest zbyt długa"; //message for alert displayed when message is too long
+
+//Notifications
+"notifications.alertTitle.permission" = "Bądź na bieżąco dzięki powiadomieniom"; //title for alert asking for notification permission
+"notifications.alertMessage.permission" = "Powiadomienia będą Cię informować o kończącym się czasie na przyjmowanie zamówień, publikacji nowego menu, przyjeździe dostawcy, itp."; //message for alert asking for notifications permission
+"notifications.title.deadline" = "Obiad!"; //title for notification informing about order deadline
+"notificaitons.message.deadline" = "Niedługo kończymy przyjmowanie zamówień na dziś. Ostatnia szansa, aby zamówić coś pysznego :)"; //message for notification informing about order deadline
+"notifications.title.newMenu" = "Nowe menu"; //title for notification informing about new menu
+"notifications.message.newMenu" = "Sprawdź jakie pyszności przygotowaliśmy dla Ciebie na jutro. Można już zamawiać!"; //message for notification informing about new menu
+
+//UserAccount
+"userAccount.navigationBar.title" = "KONTO"; //title for user account screen
+"userAccount.navigationBar.editButton" = "Edytuj"; //text for edit bar button item
+"userAccount.navigationBar.saveButton" = "Zapisz"; //text for save bar button item
+"userAccount.label.yourInfo" = "Twoje dane"; //text for laber "your data"
+"userAccount.textField.namePlaceholder" = "Imię"; //text for name text field placeholder text
+"userAccount.textField.lastNamePlaceholder" = "Nazwisko"; //text for last name text field placeholder
+"userAccount.textField.phonePlaceholder" = "Numer telefonu (opcjonalne)"; //text for empty phone number text field placeholder used in edit mode
+"userAccount.label.phoneNumberInfo" = "Numer telefonu"; //text used used for empty phone number text field placeholder in browse mode
+"userAccount.label.improvedContact" = "Ułatwi kontakt z dostawcą"; //text informing why user should insert phone number - used for empty phone text field in browse mode
+"userAccount.label.changePassword" = "Zmień hasło"; //text for chanbge password button
+"userAccount.alertMessage.updateSucceeded" = "Twoje dane zostały pomyślnie zmienione."; // text for aler message informing about changing user data
+"userAccount.alertMessage.updateFailed" = "Nie udało się zmienić danych."; //text for alert message informing about error while changind user date
+
+//TextFieldError
+"textFieldError.errorText.email" = "Wprowadź poprawny adres e-mail"; //text for error message describing correct email foramt
+"textFieldError.errorText.emailRepeat" = "Powtórz adres e-mail"; //text for error message describing that repeated email must match first one
+"textFieldError.errorText.name" = "Imię musi posiadać 2-250 znaków"; //text for error message describing correct name format
+"textFieldError.errorText.lastName" = "Nazwisko musi posiadać 2-250 znaków"; //text for error message describing correct lastName format
+"textFieldError.errorText.nameShort" = "2-250 znaków"; // short text for error message describing correct name format
+"textFieldError.errorText.lastNameShort" = "2-250 znaków"; //short text for error message describing correct lastName format
+"textFieldError.errorText.password" = "Min 8 znaków, 1 cyfra, 1 wielka litera"; //text for error message describing correct password format
+"textFieldError.errorText.repeatPassword" = "Oba hasłą muszą być identyczne"; //text for error message describing that repeated password must match first password
+"textFieldError.errorText.phoneNumber" = "Wprowadź poprawny numer telefonu"; //text for error message describing correct phone number format
+
+//ChangePassword
+"changePassword.navigationBar.title" = "ZMIEŃ HASŁO"; //title for change password screen
+"changePassword.navigationBar.saveButton" = "Zapisz"; //text for save button bar item
+"changePassword.label.changePassword" = "Zmień hasło"; //text for change password info label
+"changePassword.textField.oldPasswordPlaceholder" = "Aktualne hasło"; //placeholder text for previos password
+"changePassword.textField.newPasswordPlaceholder" = "Nowe hasło"; //placehlder text for new password
+"changePassword.alertMessage.changeSucceeded" = "Hasło zostało zmienione"; //text for alert message informing about password change succes
+"changePassword.alertMessage.changeFailed" = "Wystąpił błąd podczas zmiany hasła. Upewnij się, że aktualne hasło jest wprowadzone poprawnie"; //text for alert message informing about problem with password change
+
+//OrderHistory
+"orderHistory.navigationBar.title" = "ZAMÓWIENIA"; //title for orders screen
+"orderHistory.label.sectionInProgress" = "W trakcie realizacji"; // text for in progress section name
+"orderHistory.label.sectionOrderHistory" = "Historia zamówień"; //text for order history section name
+"orderHistory.label.statusCanceled" = "Anulowane"; //text for canceled order status
+"orderHistory.label.statusRejected" = "Odrzucone"; //text for rejected order status
+"orderHistory.label.statusDelivered" = "Dostarczone"; //text for delivered order status
+"orderHistory.label.rate" = "oceń:"; //text for rate label
+"orderHistory.label.cancelOrder" = "ANULUJ ZAMÓWIENIE"; //text for cancel order button
+"orderHistory.alertTitle.couldNotCancelOrder" = "Nie można anulować zamówienia"; //generic title for alert displayed after error during canceling order occured
+"orderHistory.alertMessage.tooLateToCancelOrder" = "Niestety, jest już zbyt późno na anulowanie zamówienia"; //text displayed when it's already too late to cancel order
+"orderHistory.alertMessage.couldNotCancelOrder" = "Niestety, nie można anulować tego zamówienia"; //text displayed when error occured during canceling order
+"orderHistory.alertMessage.cancelOrderConfirmation" = "Jesteś pewien, że chcesz anulować to zamówienie?"; //confirmation question displayed in alert after user taps on 'cancel order' button
+
+//RateOrder
+"rateOrder.navigationBar.title" = "OCEŃ DANIE"; //title for rate order screen
+"rateOrder.textView.oppinionPlaceholder" = "Podziel się swoją opinią"; //placeholder text for oppinion text view
+"rateOrder.button.send" = "ZAPISZ"; //text for send rating button
+
+//MenuSummaryView
+"menuSummaryView.button.presentCurrentOrder" = "ZOBACZ ZAMÓWIENIE"; //text for button "present current order" for inactive menu
+"menuSummaryView.label.rateRequest" = "Podziel się z nami swoją opinią na temat Twojego ostatniego zamówienia:"; //text asking user to rate last order
+"menuSummaryView.label.rate" = "oceń:"; //text for rate label
+"menuSummaryView.label.noMenu" = "Wygląda na to, że mamy jakieś niespodziewane opóźnienia. Zajrzyj ponownie później."; //text for menu summary view view showed if for any reason there is no menu availabel
+"menuSummaryView.label.didOrder" = "Twoje zamówienie jest w trakcie realizacji."; //text for info informing about preparing order and new menu for next day.
+"menuSummaryView.label.holiday" = "Dzisiaj wolne. Miłego wypoczynku :)"; //text informing about holiday.
+"menuSummaryView.label.toLate" = "Niestety minęła %@ i już nie przyjmujemy zamówień na dzisiaj."; //text informing there is to late for making order. %@ is placeholder for order deadline hour
+"menuSummaryView.label.nextMenu" = "Menu na kolejny dzień: %@ %@ będzie dostępne %@ od godziny %@"; // text for informing about next menu date. First %@ is placeholder for weekday, second for delivery date, third for date of menu update, fourth for update hour. This text will look like this: "Menu na kolejny dzień: poniedziałek 14.09 będzie dostępne 13.09 od godziny 18:00"
+
