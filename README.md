@@ -1,11 +1,8 @@
-# csv2strings
-App for convertion localization files .strings to .csv and .csv to .strings
-
 ## **strings file structure:**
 
-"text.identifier" = "Here goes text you want to show"; //and here is comment - use double slash 
+`"text.identifier" = "Here goes text you want to show"; //and here is comment - use double slash `
 
-//comments can be only "value" in line, and yes quotation marks are allowed
+`//comments can be only "value" in line, and yes quotation marks are allowed`
 
 ### WARNING:
-/*this type of comment is not supported - remove it from converted file*/
+`/*this type of comment is not supported - remove it from converted file*/`
