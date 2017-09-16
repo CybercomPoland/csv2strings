@@ -15,8 +15,13 @@ enum ConversionMode {
 
 class LocalizableConverter {
     static let quotationMark = "\""
+    static let doubleQuotationMark = "\"\""
     static let commaMark = ","
     static let commentMark = "//"
+
+    static let stringsTraslationMark = " = "
+    static let stringsCommentSection = "; //"
+    
 
     func convertFiles() {
         convert(inputName: "input", outputName: "output", mode: .stringsToCsv)
@@ -60,6 +65,7 @@ extension LocalizableConverter {
         }
     }
 
+    //read file as String
     fileprivate func stringFromFile(_ fileName: String, fileType: String) -> String? {
         guard let path = Bundle.main.path(forResource: fileName, ofType: fileType) else {
             print("could not find file \(fileName).\(fileType)")
@@ -73,6 +79,7 @@ extension LocalizableConverter {
         return data
     }
 
+    //split multiline String into array of slingleline Strings
     fileprivate func splitStringByNewLines(_ data: String) -> [String] {
         var lines = [String]()
         data.enumerateLines { (line, _) in
@@ -80,7 +87,12 @@ extension LocalizableConverter {
         }
         return lines
     }
+}
 
+//strings to csv
+extension LocalizableConverter {
+
+    //converts line of strings file format to line of csv file format (input is in format: "identifer" = "text"; //comment)
     fileprivate static func convertStringsLineToCsv(input: String) -> String {
         var output = ""
 
@@ -88,59 +100,45 @@ extension LocalizableConverter {
         guard !input.isEmpty else { return output }
 
         let nsInput = input as NSString
-
-        //no quotations - it means line contains comment only
         if stringsToCsvIsCommentLineOnly(line: nsInput) {
+            //no quotations - it means line contains comment only
             let comment = stringsToCsvGetComments(from: nsInput) as NSString
-            output = "\(commaMark)\(commaMark)\(formattedCsvString(comment))"
+            output = commaMark + commaMark + stringsToCsvEmbedInQuotationMarks(comment)
             return output
         }
 
-        //find first quoted string
-        let (firstQuotation, firstQuotationEndIndex) = LocalizableConverter.stringsToCsvGetQuotationAndEndIndex(from: nsInput, startIndex: 0)
-        //find second quoted string
-        let (secondQuotation, _) = stringsToCsvGetQuotationAndEndIndex(from: nsInput, startIndex: firstQuotationEndIndex)
-        //find comment
+        let (identifier, identifierEndIndex) = LocalizableConverter.stringsToCsvGetQuotationAndEndIndex(from: nsInput, startIndex: 0)
+        let (text, _) = stringsToCsvGetQuotationAndEndIndex(from: nsInput, startIndex: identifierEndIndex)
         let comment = stringsToCsvGetComments(from: nsInput)
 
+        let formattedText = stringsToCsvEmbedInQuotationMarks(text as NSString)
+        let formattedComment = stringsToCsvEmbedInQuotationMarks(comment as NSString)
 
-        let formattedSecondQuotation = formattedCsvString(secondQuotation as NSString)
-        let formattedComment = formattedCsvString(comment as NSString)
-
-        output = "\(firstQuotation)\(commaMark)\(formattedSecondQuotation)\(commaMark)\(formattedComment)"
+        output = identifier + commaMark + formattedText + commaMark + formattedComment
         return output
     }
 
-    fileprivate static func convertCsvLineToStrings(input: String) -> String {
-        var output = ""
-
-        
-        //find first comma or quote
-        //if it's comma, move set pointer and start over
-        //if it's quote find next quote and start over
-        return output
-    }
-
-    fileprivate static func formattedCsvString(_ text: NSString) -> String {
-        let doubleQuoted = text.replacingOccurrences(of: quotationMark, with: "\(quotationMark)\(quotationMark)")
-
+    //replace quotation marks with doubled quotation marks and embed result in quotation marks (format of csv file cell)
+    fileprivate static func stringsToCsvEmbedInQuotationMarks(_ text: NSString) -> String {
+        let doubleQuoted = text.replacingOccurrences(of: quotationMark, with: doubleQuotationMark)
         return "\(quotationMark)\(doubleQuoted)\(quotationMark)"
     }
 
+    //extract csv cell (identifier or text) from strings line
     fileprivate static func stringsToCsvGetQuotationAndEndIndex(from text: NSString, startIndex: Int) -> (String,Int) {
-        let quotation = quotationMark
         let rangeForFirstQM = NSMakeRange(startIndex, text.length - startIndex)
-        guard rangeForFirstQM.location < Int.max else { return ("", startIndex) }
-        let firstQMRange = text.range(of: quotation, options: [], range: rangeForFirstQM, locale: nil)
+        let firstQMRange = text.range(of: quotationMark, options: [], range: rangeForFirstQM, locale: nil)
+        guard firstQMRange.location < Int.max else { return ("", startIndex) }
         let firstQMRangeEnd = firstQMRange.location + firstQMRange.length
         let rangeForSecondQM = NSMakeRange(firstQMRangeEnd, text.length - firstQMRangeEnd)
-        guard rangeForSecondQM.location < Int.max else { return ("", firstQMRangeEnd) }
-        let secondQMRange = text.range(of: quotation, options: [], range: rangeForSecondQM, locale: nil)
+        let secondQMRange = text.range(of: quotationMark, options: [], range: rangeForSecondQM, locale: nil)
+        guard secondQMRange.location < Int.max else { return ("", firstQMRangeEnd) }
         let firstQuotation = text.substring(with: NSMakeRange(firstQMRangeEnd, secondQMRange.location - firstQMRangeEnd))
         let secondQMRangeEnd = secondQMRange.location + secondQMRange.length
         return (firstQuotation, secondQMRangeEnd)
     }
 
+    //extract comment from strings line
     fileprivate static func stringsToCsvGetComments(from text: NSString) -> String{
         let commentMarkRange = text.range(of: commentMark)
         guard commentMarkRange.location < Int.max else { return "" }
@@ -150,9 +148,87 @@ extension LocalizableConverter {
 
     fileprivate static func stringsToCsvIsCommentLineOnly(line: NSString) -> Bool {
         guard line.contains(commentMark) else { return false }
-
         let commentRange = line.range(of: commentMark)
         let quotationRange = line.range(of: quotationMark)
         return commentRange.location < quotationRange.location
+    }
+}
+
+//csv to strings
+extension LocalizableConverter {
+    //converts line of csv file format to line of strings file format (input line should have 3 columns: identifier, text and comment)
+    fileprivate static func convertCsvLineToStrings(input: String) -> String {
+        var output = ""
+        let input = input.trimmingCharacters(in: .whitespaces)
+        guard !input.isEmpty else { return output }
+
+        let nsInput = input as NSString
+
+        let (identifer, stringsIdentifierEndIndex) = csvToStringsCellAndEndIndex(from: nsInput, startIndex: 0)
+        let (text, stringsTextEndIndex) = csvToStringsCellAndEndIndex(from: nsInput, startIndex: stringsIdentifierEndIndex)
+        let (comment, _) = csvToStringsCellAndEndIndex(from: nsInput, startIndex: stringsTextEndIndex)
+
+        guard !identifer.isEmpty else { return commentMark + comment }
+        output = quotationMark + identifer + quotationMark + stringsTraslationMark + quotationMark + text + quotationMark + stringsCommentSection + comment
+        return output
+    }
+
+    //find cvs cell in cvs line (identifier, text or comment)
+    fileprivate static func csvToStringsCellAndEndIndex(from text: NSString, startIndex: Int) -> (String, Int) {
+        var unmatchingQM = false
+        var removeDoubleQM = false
+
+        var (cMRange, qMRange) = csvToStringsGetCommaAndQuestionMarkRanges(from: text, startIndex: startIndex)
+        if qMRange.location < cMRange.location {
+            //quotation first - it means cell string is embedded in quotation marks
+            removeDoubleQM = true
+            unmatchingQM = true
+
+            while unmatchingQM {
+                //find matching quotation
+                (cMRange, qMRange) = csvToStringsGetCommaAndQuestionMarkRanges(from: text, startIndex: qMRange.location + qMRange.length)
+                guard qMRange.location != Int.max else { fatalError() }
+                unmatchingQM = false
+
+                //check if it's embedded quotation
+                (cMRange, qMRange) = csvToStringsGetCommaAndQuestionMarkRanges(from: text, startIndex: qMRange.location + qMRange.length)
+                if qMRange.location < cMRange.location { unmatchingQM = true }
+            }
+        }
+
+        //check if it's the last cvs cell (without comma at the end)
+        if cMRange.location == Int.max {
+            var output = text.substring(from: startIndex) as NSString
+            output = removeDoubleQM ? csvToStringsExtractFromQuotationMarks(output) : output
+            return (output as String, text.length)
+        }
+        let cellStringRange = NSMakeRange(startIndex, cMRange.location - startIndex)
+        var cellString = text.substring(with: cellStringRange) as NSString
+
+        if removeDoubleQM {
+            cellString = csvToStringsExtractFromQuotationMarks(cellString)
+        }
+
+        return (cellString as String, cMRange.location + cMRange.length)
+    }
+
+    //find range of next comma or question marks in cvs line
+    fileprivate static func csvToStringsGetCommaAndQuestionMarkRanges(from text: NSString, startIndex: Int) -> (NSRange, NSRange) {
+        let rangeOfSearch = NSMakeRange(startIndex, text.length - startIndex)
+        let cMRange = text.range(of: commaMark, options: [], range: rangeOfSearch, locale: nil)
+        let qMRange = text.range(of: quotationMark, options: [], range: rangeOfSearch, locale:  nil)
+        return (cMRange, qMRange)
+    }
+
+    //convert cvs cell to strings format (remove external quotation marks and change double quotation marks to single one)
+    fileprivate static func csvToStringsExtractFromQuotationMarks(_ text: NSString) -> NSString {
+        let textRange = NSMakeRange(0, text.length)
+        let firstQMRange = text.range(of: quotationMark, options: [], range: textRange, locale: nil)
+        let lastQMRange = text.range(of: quotationMark, options: [.backwards], range: textRange, locale: nil)
+        let firstQMRangeEndIndex = firstQMRange.location + firstQMRange.length
+        let insideQuotationRange = NSMakeRange(firstQMRangeEndIndex, lastQMRange.location - firstQMRangeEndIndex)
+        var text = text.substring(with: insideQuotationRange) as NSString
+        text = text.replacingOccurrences(of: doubleQuotationMark, with: quotationMark) as NSString
+        return text
     }
 }

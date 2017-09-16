@@ -10,6 +10,7 @@
 		1F505E3C1F6AC1C300DE5A0F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F505E3B1F6AC1C300DE5A0F /* main.swift */; };
 		1F505E451F6AC59900DE5A0F /* LocalizableConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F505E441F6AC59900DE5A0F /* LocalizableConverter.swift */; };
 		1FD93A9A1F6AD0DF00199E65 /* input.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F505E431F6AC24D00DE5A0F /* input.strings */; };
+		B23545F21F6D8519001FB7D7 /* input.csv in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FD93A9D1F6BE6B200199E65 /* input.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +20,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				B23545F21F6D8519001FB7D7 /* input.csv in CopyFiles */,
 				1FD93A9A1F6AD0DF00199E65 /* input.strings in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
